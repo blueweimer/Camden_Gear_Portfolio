@@ -11,7 +11,7 @@ public class TransactionsRepository {
 
         // Connect to a database
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://127.0.0.1:3306/CommerceBankOne" , "root", "slateydog");
+                ("jdbc:mysql://127.0.0.1:3306/CommerceBankOne" , "root", "password");
         System.out.println("Database connected");
 
         // Create a statement
