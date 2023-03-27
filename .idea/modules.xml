@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Commerce_Bank.iml" filepath="$PROJECT_DIR$/.idea/Commerce_Bank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Master/Commerce_Bank_Back_End_/Commerce_Bank_Back_End.iml" filepath="$PROJECT_DIR$/Master/Commerce_Bank_Back_End_/Commerce_Bank_Back_End.iml" />
+    </modules>
+  </component>
+</project>
