@@ -24,6 +24,8 @@ public class TransactionsService {
             return transactionsRepository.getUIdById(t_id);
         }
 
+
+
         //Balance
         public String getBalanceById(Integer t_id) throws SQLException {
             return transactionsRepository.getBalanceById(t_id);
@@ -35,7 +37,7 @@ public class TransactionsService {
         }
 
         //Type
-        public String getTypeById(Integer t_id) throws SQLException {
+        public String getTypeById(String t_id) throws SQLException {
             return transactionsRepository.getTypeById(t_id);
         }
 
@@ -53,32 +55,32 @@ public class TransactionsService {
     /*********************************/
 
         //TId
-        public String getTIdByUId(Integer u_id) throws SQLException {
+        public String getTIdByUId(String u_id) throws SQLException {
             return transactionsRepository.getTIdByUId(u_id);
         }
 
         //Balance
-        public String getBalanceByUId(Integer u_id) throws SQLException {
+        public String getBalanceByUId(String u_id) throws SQLException {
             return transactionsRepository.getBalanceByUId(u_id);
         }
 
         //Amount
-        public String getAmountByUId(Integer u_id) throws SQLException {
+        public String getAmountByUId(String u_id) throws SQLException {
             return transactionsRepository.getAmountByUId(u_id);
         }
 
         //Type
-        public String getTypeByUId(Integer u_id) throws SQLException {
+        public String getTypeByUId(String u_id) throws SQLException {
             return transactionsRepository.getTypeByUId(u_id);
         }
 
         //Savings_Goal
-        public String getSavingsGoalByUId(Integer u_id) throws SQLException {
+        public String getSavingsGoalByUId(String u_id) throws SQLException {
             return transactionsRepository.getSavingsGoalByUId(u_id);
         }
 
         //Date
-        public String getDateByUId(Integer u_id) throws SQLException {
+        public String getDateByUId(String u_id) throws SQLException {
             return transactionsRepository.getDateByUId(u_id);
         }
 
@@ -89,7 +91,7 @@ public class TransactionsService {
     /***************************************************/
 
         //display all Expenses/Incomes
-        public String displayExpensesIncomes(Integer u_id) throws SQLException {
+        public String displayExpensesIncomes(String u_id) throws SQLException {
             return transactionsRepository.displayExpensesIncomes(u_id);
         }
 
@@ -99,8 +101,12 @@ public class TransactionsService {
         }
 
         //display all daily balance
-        public double findDailyBalance(Integer u_id, Integer month) throws SQLException {
-            return transactionsRepository.findDailyBalance(u_id, month);
+        public String findDailyBalance(String u_id, Integer month, Integer day, Integer year) throws SQLException {
+            return transactionsRepository.findDailyBalance(u_id, month, day, year);
+        }
+
+        public String getTotalAmount(String u_id, Integer month, Integer day, Integer year) throws SQLException {
+            return transactionsRepository.getTotalAmount(u_id, month, day, year);
         }
 
 
@@ -109,22 +115,19 @@ public class TransactionsService {
     /***************************************************/
 
         //update balance
-        public String updateBalance(Integer t_id, Double val) throws SQLException {
-            return transactionsRepository.updateBalance(t_id, val);
+        public String updateBalance(String u_id, Double val) throws SQLException {
+            return transactionsRepository.updateBalance(u_id, val);
         }
 
 
         //new Expenses/Incomes
-        public String newExpensesIncomes(Integer t_id, Integer u_id, double balance, double amount, String type, double savings_goal, String date) throws SQLException {
-            return transactionsRepository.newExpensesIncomes(t_id, u_id, balance, amount, type, savings_goal, date);
+        public String newExpensesIncomes(String u_id, double balance, double amount, String type, double savings_goal, String date) throws SQLException {
+            return transactionsRepository.newExpensesIncomes(u_id, balance, amount, type, savings_goal, date);
         }
 
         //update type
         public String setType(Integer t_id, String val) throws SQLException {
             return transactionsRepository.setType(t_id, val);
         }
-
-
-
 
 }

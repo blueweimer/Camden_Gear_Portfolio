@@ -7,26 +7,35 @@ import logo from '../../images/logo.png'
 
 
 
+
 export default function LoginView(props) {
     const history = useNavigate();
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
+    function clearLocal(){
+        if(window.localStorage.getItem('name') != null){
+            window.localStorage.clear();
+            window.location.reload();
+        }
+    }
+
+
     const handleLogin = (e) => {
-        e.preventDefault();
-        login(username, password)
-            .then(response => {
-                setToken(response.jwt);
-                history.push("/user");
-            })
-            .catch(e => {
-            });
+            e.preventDefault();
+                login(username, password)
+                    .then(response => {
+                        setToken(response.jwt);
+                        history.push("/user");
+                    })
+                    .catch(e => {
+                    });
     };
     
 
     return (
-        <Container maxWidth={false} className="App-header">
+        <Container maxWidth={false} className="App-header" onload={clearLocal()}>
             <Container maxWidth={"sm"}>
                 <Card id="form">
                     <CardHeader title={"Login"}/>
