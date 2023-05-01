@@ -503,6 +503,14 @@ public class TransactionsRepository {
             return output;
         }
 
+    //delete Transaction
+    public String deleteTransaction(Integer t_id) throws SQLException {
+        String query = "DELETE FROM CommerceBankOne.transactions WHERE t_id='" + t_id  + "'";
+        statement.executeUpdate(query);
+        String output = "Done";
+        return output;
+    }
+
 
 
 

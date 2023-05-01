@@ -294,6 +294,15 @@ public class TransactionsController {
             return new ResponseEntity<>(transactions, HttpStatus.OK);
         }
 
+        //delete transaction
+        @CrossOrigin
+        @RequestMapping(value = "/delete/{t_id}", method = {RequestMethod.POST, RequestMethod.GET})
+        public ResponseEntity<?> deleteTransaction(Model model, @PathVariable Integer t_id, Transactions transactions) throws ClassNotFoundException, SQLException {
+            String newType = transactionsService.deleteTransaction(t_id);
+            return new ResponseEntity<>(transactions, HttpStatus.OK);
+        }
+
+
 
 
 

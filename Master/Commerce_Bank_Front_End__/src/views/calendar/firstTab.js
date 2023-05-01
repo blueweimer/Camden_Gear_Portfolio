@@ -8,6 +8,8 @@ import ArrowBack from '@material-ui/icons/ArrowBack';
 import ArrowForward from '@material-ui/icons/ArrowForward';
 import { range, getDaysInMonth, getSortedDays, areDatesTheSame, getAdditionalDailyBalance, getAdditionalOverUnder, getDateObj } from "./calendarComponents/utils";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {Link} from "react-router-dom";
+import axios from "axios";
 
 
 
@@ -32,6 +34,12 @@ const FirstTab = ({startingDate, eventsArr, addEvent}) => {
       setCurrentMonth(11)
       setCurrentYear((prev) => prev - 1);}
     }
+
+  const deleteEvent=async (id)=>{
+          await axios.delete(`http://localhost:8080/delete/${id}`);
+          //reload page
+
+      }
 
 
   return (

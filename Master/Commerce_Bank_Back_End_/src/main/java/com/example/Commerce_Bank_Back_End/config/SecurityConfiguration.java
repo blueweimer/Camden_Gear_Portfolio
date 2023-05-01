@@ -113,6 +113,7 @@ public class SecurityConfiguration {
                         .mvcMatchers("/findDailyBalance/**").permitAll()
                         .mvcMatchers("/findOverUnder/**").permitAll()
                         .mvcMatchers("/checkGetWorks").permitAll()
+                        .mvcMatchers("/delete/*").permitAll()
                         .anyRequest().authenticated() //authorize all requests from spring
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))//disable session

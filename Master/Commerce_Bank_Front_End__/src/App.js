@@ -25,6 +25,7 @@ function App() {
         <BrowserRouter>
           <Container maxWidth={false} disableGutters>
             <Routes>
+              <Route path="/" element={<LoginView />} />
               <Route path="/login" element={<LoginView />} />
               <Route path="*" element={<p>This page does not exist.</p>} />
               <Route path="/calendar" element={<HomeView />} />

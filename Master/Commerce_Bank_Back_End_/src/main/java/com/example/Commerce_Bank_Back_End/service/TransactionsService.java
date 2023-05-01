@@ -130,4 +130,9 @@ public class TransactionsService {
             return transactionsRepository.setType(t_id, val);
         }
 
+        //delete transaction
+        public String deleteTransaction(Integer t_id) throws SQLException {
+            return transactionsRepository.deleteTransaction(t_id);
+        }
+
 }
