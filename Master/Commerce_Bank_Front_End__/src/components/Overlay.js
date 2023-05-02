@@ -1,6 +1,6 @@
 import React from 'react';
-import overlayImage from '/Users/camdengear/Documents/GitHub/Commerce_Bank/Master/Commerce_Bank_Front_End__/src/images/overlayImage.png';
-import { OverlayImg, OverlayCont } from "/Users/camdengear/Documents/GitHub/Commerce_Bank/Master/Commerce_Bank_Front_End__/src/views/calendar/calendarComponents/styled.js";
+import overlayImage from '../images/overlayImage.png';
+import { OverlayImg, OverlayCont } from "../views/calendar/calendarComponents/styled.js";
 
 function Overlay() {
 

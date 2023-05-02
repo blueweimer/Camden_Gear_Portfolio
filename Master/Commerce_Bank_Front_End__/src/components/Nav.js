@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import logoTwo from '/Users/camdengear/Documents/GitHub/Commerce_Bank/Master/Commerce_Bank_Front_End__/src/images/logoTwo.png';
+import logoTwo from '../images/logoTwo.png';
 
 function Nav() {
 

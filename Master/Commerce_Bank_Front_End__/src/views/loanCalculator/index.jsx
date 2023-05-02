@@ -66,9 +66,9 @@ export default function LoanCalculator(props) {
         let x = "";
         let newLA = parseFloat(loanAmount);
         let newLT = parseFloat(loanTerm);
-        let newIR = 12 * parseFloat(interestRate);
+        let newIR = (parseFloat(interestRate)/100) / 12;
         //let returnResult = newLA + newLT + newIR;
-        let returnResult = (newLA * (newIR * (1 + newIR)^newLT)) / ((1 + newIR)^(newLT - 1)) / newLT;
+        let returnResult = (newIR * newLA) / (1 - (1 + newIR)**(newLT * -1));
 
         //M = P * (r * (1+r)^n) / ((1+r)^n - 1)
         //p: loanAmount: total amount
